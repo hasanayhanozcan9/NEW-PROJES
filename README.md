@@ -153,7 +153,19 @@ LLM modellerini optimize eden ve arayüzleri görselleştiren motorlar.
 *   `p93_allosteric_llm_inference.py` - Biyolojik enzim mantığı (allosterik) kullanarak LLM çıkarımlarını (inference) hızlandıran mimari.
 
 ---
+---
 
+## 📄 LICENSE & INTELLECTUAL PROPERTY RIGHTS
+
+**Copyright © 2026 Hasan Ayhan Özcan. All Rights Reserved.**
+
+This software, architecture, concepts, manifests, and all associated core modules (`Biokernel Sovereign OS`) are proprietary intellectual property. 
+
+* **Strict Prohibition:** No part of this repository, including source code registries, documentation, architectural designs, and conceptual frameworks, may be reproduced, distributed, modified, or transmitted in any form or by any means—including photocopying, recording, or other electronic or mechanical methods—without the prior explicit written permission of the owner.
+* **No Commercial or Individual Replication:** Neither commercial entities nor individuals are permitted to copy, fork, adapt, or utilize these materials for any purpose without formal authorization.
+* **Unauthorized Use & Enforcement:** Any unauthorized copying, reverse engineering, commercial exploitation, or individual replication will trigger immediate automated countermeasures via sovereign proxy protocols and strict legal action under international intellectual property laws.
+
+For licensing inquiries, commercial partnerships, and authorized access requests, contact: **hasanayhanozcan9@gmail.com**
 ---
 
 ## 📩 CONTACT & COLLABORATION
