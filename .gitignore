@@ -1,8 +1,0 @@
-.env
-*.key
-*.pem
-venv/
-__pycache__/
-*.pyc
-data/secret_weights/
-data/local_pubmed_cache.db
