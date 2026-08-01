@@ -154,10 +154,10 @@ LLM modellerini optimize eden ve arayüzleri görselleştiren motorlar.
 
 ---
 
-## 🛠️ BAŞLATMA KOMUTLARI (DEPLOYMENT INSTRUCTIONS)
+---
 
-Sistemi izole bir ortamda (air-gapped) veya kuantum bulut altyapısında başlatmak için:
+## 📩 CONTACT & COLLABORATION
 
-1. **Çekirdek Entegrasyonu (Genesis Boot):**
-   ```bash
-   python sovereign_orchestrator.py --init-all --verify-hash
+For detailed discussions regarding the Biokernel Sovereign OS architecture, licensing, technical information, and strategic collaborations, please reach out via the address below:
+
+📧 **Email:** [hasanayhanozcan9@gmail.com](mailto:hasanayhanozcan9@gmail.com)
