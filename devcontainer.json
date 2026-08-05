@@ -1,0 +1,5 @@
+{
+  "name": "Biokernel Sovereign OS Demo",
+  "image": "mcr.microsoft.com/devcontainers/python:3",
+  "postAttachCommand": "python3 run_demo.py"
+}
