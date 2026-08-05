@@ -1,8 +1,4 @@
 
-# 🧬 BIOKERNEL SOVEREIGN OS - Terminal Demo
-Sovereign AI Master Orchestrator and LNN Bio-Simulation Interface.
-# 🧬 BIOKERNEL SOVEREIGN OS - Terminal Demo
-Sovereign AI Master Orchestrator and LNN Bio-Simulation Interface.
 # BIOKERNEL: THE SOVEREIGN BIO-DIGITAL ECOSYSTEM & IP REGISTRY
 **The Post-Silicon Era Protocol for Global AI, Wetware, and Biological Networking**
 
