@@ -16,12 +16,11 @@ The traditional silicon-based computing and TCP/IP networking paradigms have rea
 To initialize the Sovereign OS core orchestrator and simulate the biological mesh network locally, run the following commands in your terminal:
 
 18  ```bash
-19  git clone [https://github.com/hasanayhanozcan9/NEW-PROJES.git](https://github.com/hasanayhanozcan9/NEW-PROJES.git)
-20  cd NEW-PROJES
-21  python3 run_demo.py
-22  ```
-23  
-24  **Biokernel** is a revolutionary 105-module cryptographic architecture...
+git clone [https://github.com/hasanayhanozcan9/NEW-PROJES.git](https://github.com/hasanayhanozcan9/NEW-PROJES.git)
+  cd NEW-PROJES
+  python3 run_demo.py
+22  ``` 
+23  **Biokernel** is a revolutionary 105-module cryptographic architecture...
 
 
 
