@@ -12,14 +12,12 @@
 ## 1. EXECUTIVE SUMMARY & SOVEREIGNTY DECLARATION
 The traditional silicon-based computing and TCP/IP networking paradigms have reached a terminal bottleneck. The exponential energy demands of Large Language Models (LLMs), the latency limitations of classical routing, and the imminent threat of quantum decryption require a fundamental paradigm shift. 
 
-## 🚀 QUICK START (DEMO BOOT SEQUENCE)
-To initialize the Sovereign OS core orchestrator and simulate the biological mesh network locally, run the following commands in your terminal:
+## 🚀 VIP QUICK START (AUTOMATED BOOT SEQUENCE)
+To instantly initialize the Sovereign OS orchestrator and run the bio-mesh network simulation locally, execute this single automated command in your terminal:
 
-19  ```bash
-git clone [https://github.com/hasanayhanozcan9/NEW-PROJES.git](https://github.com/hasanayhanozcan9/NEW-PROJES.git)
-  cd NEW-PROJES
-  python3 run_demo.py
-22  ``` 
+```bash
+git clone [https://github.com/hasanayhanozcan9/NEW-PROJES.git](https://github.com/hasanayhanozcan9/NEW-PROJES.git) && cd NEW-PROJES && python3 run_demo.py
+  ``` 
 
 **Biokernel** is a revolutionary 105-module cryptographic architecture...
 
