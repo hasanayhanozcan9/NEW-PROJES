@@ -7,6 +7,10 @@
 **Cryptographic Hash Verification:** Active (SHA-256 Secured via Local IP Vault)
 **Timestamp:** Fri Jul 31 12:31:48 UTC 2026
 
+
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/hasanayhanozcan9/NEW-PROJES)
+
 ---
 
 ## 1. EXECUTIVE SUMMARY & SOVEREIGNTY DECLARATION
