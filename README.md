@@ -1,12 +1,3 @@
----
-title: Biokernel Sovereign OS
-emoji: 🧬
-colorFrom: green
-colorTo: black
-sdk: gradio
-app_file: run_demo.py
-pinned: false
----
 
 # 🧬 BIOKERNEL SOVEREIGN OS - Terminal Demo
 Sovereign AI Master Orchestrator and LNN Bio-Simulation Interface.
