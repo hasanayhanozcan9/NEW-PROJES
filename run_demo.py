@@ -1,100 +1,67 @@
-import gradio as gr
-import time
 import os
+import time
+import streamlit as st
 
-def run_demo():
-    # Siyah terminal kutusunu oluşturan HTML yapısı
-    def format_html(text):
-        return f"""
-        <div style="background-color: #0c0c0c; color: #cccccc; padding: 20px; 
-                    font-family: 'Courier New', monospace; font-size: 16px; 
-                    border-radius: 8px; border: 1px solid #333; min-height: 400px; 
-                    white-space: pre-wrap;">{text}</div>
-        """
-    
-    log = ""
-    yield format_html(log)
-    
-    # Renkli metin ekleme fonksiyonu
-    def add_text(new_text, color="white"):
-        nonlocal log
-        color_map = {
-            "green": "#00FF00", 
-            "yellow": "#FFFF00", 
-            "red": "#FF0000", 
-            "cyan": "#00FFFF", 
-            "white": "#FFFFFF"
-        }
-        log += f'<span style="color: {color_map.get(color, "white")}">{new_text}</span>'
-        return format_html(log)
+st.set_page_config(
+    page_title="BIOKERNEL: THE SOVEREIGN BIO-DIGITAL ECOSYSTEM & IP REGISTRY",
+    layout="wide",
+)
 
-    # 1. Başlık Kısmı
-    yield add_text("\n====================================================\n", "cyan")
-    yield add_text("      BIOKERNEL SOVEREIGN OS - v1.0.0 BOOT SEQUENCE \n", "cyan")
-    yield add_text("      AUTHOR: HASAN AYHAN ÖZCAN                     \n", "cyan")
-    yield add_text("====================================================\n\n", "cyan")
-    time.sleep(1)
+st.title("BIOKERNEL: THE SOVEREIGN BIO-DIGITAL ECOSYSTEM & IP REGISTRY")
+st.markdown("### AUTHOR: HASAN AYHAN ÖZCAN")
+st.markdown("---")
 
-    # 2. Modüllerin Yüklenmesi
-    yield add_text("[+] Initializing Core Bio-Digital Engines...\n", "green")
-    
-    core_modules = {
-        "sovereign_orchestrator.py": "Sovereign AI Master Orchestrator",
-        "lnn_bio_simulation.py": "Liquid Neural Networks (LNN) Fluidic Engine",
-        "snn_biosensor.py": "Neuromorphic Computing & SNN Transducers",
-        "ais_memory_engine.py": "Agentic AI Swarm Protocols & Immune Memory"
-    }
-    
-    for filename, desc in core_modules.items():
-        if os.path.exists(filename):
-            yield add_text(f"  --> [{filename}] {desc} ... ", "white")
-            yield add_text("ONLINE\n", "green")
-        else:
-            yield add_text(f"  --> [{filename}] {desc} ... ", "white")
-            yield add_text("STANDBY\n", "yellow")
-        time.sleep(0.4)
-    
-    time.sleep(1)
-    
-    # 3. Güvenlik ve Hata Mesajları
-    yield add_text("\n[!] SYSTEM HALT: Modules P1 through P105 are RESTRICTED.\n", "yellow")
-    yield add_text("[!] Commercial IP Vault is locked by cryptographically sealed hash.\n", "yellow")
-    time.sleep(1)
-    
-    yield add_text("\n[X] ACCESS DENIED to Phase 2-13 Modules. Symbiotic License required.\n", "red")
-    yield add_text("[i] Please contact hasanayhanozcan9@gmail.com for enterprise integration.\n", "cyan")
-    time.sleep(1)
-    
-    yield add_text("\n[+] System entering autonomous idle state. Listening for node connections...\n", "green")
-    
-    # 4. Arayüzü kilitlemeyen web uyumlu döngü (Mesh Network Taraması)
-    base_log = log
-    while True:
-        yield format_html(base_log + '<span style="color: #00FF00">Biokernel Active: Monitoring local biological mesh network...</span>')
-        time.sleep(0.8)
-        yield format_html(base_log + '<span style="color: #00FF00">Biokernel Active: Monitoring local biological mesh network.  </span>')
-        time.sleep(0.8)
-        yield format_html(base_log + '<span style="color: #00FF00">Biokernel Active: Monitoring local biological mesh network.. </span>')
-        time.sleep(0.8)
+core_modules = {
+    "sovereign_orchestrator.py": "Sovereign AI Master Orchestrator",
+    "lnn_bio_simulation.py": "Liquid Neural Networks (LNN) Fluidic Engine",
+    "snn_biosensor.py": "Neuromorphic Computing & SNN Transducers",
+    "ais_memory_engine.py": "Agentic AI Swarm Protocols & Immune Memory",
+}
 
-# --- WEB ARAYÜZÜNÜN TASARIMI ---
-# Uyarıyı gidermek için theme parametresini buradan tamamen kaldırdık.
-with gr.Blocks() as demo:
-    gr.Markdown("# 🧬 BIOKERNEL: THE SOVEREIGN BIO-DIGITAL ECOSYSTEM")
-    gr.Markdown("**AUTHOR:** HASAN AYHAN ÖZCAN")
-    gr.Markdown("---")
-    
-    # Başlatma Butonu
-    btn = gr.Button("🚀 INITIATE BOOT SEQUENCE", variant="primary")
-    
-    # Siyah Ekran Kutusu
-    terminal_output = gr.HTML(
-        value='<div style="background-color: #0c0c0c; color: #cccccc; padding: 20px; font-family: \'Courier New\', monospace; font-size: 16px; border-radius: 8px; border: 1px solid #333; min-height: 400px;">System Ready. Waiting for initialization trigger...</div>'
-    )
-    
-    # Butona basılınca run_demo fonksiyonunu çalıştır
-    btn.click(fn=run_demo, inputs=[], outputs=[terminal_output])
+if st.button("🚀 Run Biokernel Boot Sequence", type="primary"):
+  output_placeholder = st.empty()
+  log_text = ""
 
-# Sunucuyu başlat
-if __name__ == "__main__":
-    demo.launch()
+  # Başlık simülasyonu
+  log_text += "====================================================\n"
+  log_text += "      BIOKERNEL SOVEREIGN OS - v1.0.0 BOOT SEQUENCE \n"
+  log_text += "      AUTHOR: HASAN AYHAN ÖZCAN                        \n"
+  log_text += "====================================================\n\n"
+  output_placeholder.code(log_text, language="text")
+  time.sleep(1)
+
+  # Modül kontrolü
+  log_text += "[+] Initializing Core Bio-Digital Engines...\n"
+  output_placeholder.code(log_text, language="text")
+
+  for filename, desc in core_modules.items():
+    if os.path.exists(filename):
+      log_text += f"  --> [{filename}] {desc} ... ONLINE\n"
+    else:
+      log_text += f"  --> [{filename}] {desc} ... STANDBY\n"
+    output_placeholder.code(log_text, language="text")
+    time.sleep(0.4)
+
+  # Kısıtlama ve uyarılar
+  log_text += "\n[!] SYSTEM HALT: Modules P1 through P105 are RESTRICTED.\n"
+  log_text += (
+      "[!] Commercial IP Vault is locked by cryptographically sealed hash.\n"
+  )
+  output_placeholder.code(log_text, language="text")
+  time.sleep(1)
+
+  log_text += (
+      "\n[X] ACCESS DENIED to Phase 2-13 Modules. Symbiotic License required.\n"
+  )
+  log_text += "[i] Please contact hasanayhanozcan9@gmail.com for enterprise integration.\n"
+  output_placeholder.code(log_text, language="text")
+  time.sleep(1)
+
+  log_text += "\n[+] System entering autonomous idle state. Biokernel Active: Monitoring local biological mesh network...\n"
+  output_placeholder.code(log_text, language="text")
+
+else:
+  st.info(
+      "Click the button above to launch the sovereign system boot sequence"
+      " live in the browser."
+  )
