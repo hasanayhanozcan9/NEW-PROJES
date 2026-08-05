@@ -1,8 +1,9 @@
 name: Sync to Hugging Face Hub
 
 on:
+pushed:
   push:
-    branches: [main]
+    branches: [ana]
 
 jobs:
   sync-to-hub:
@@ -18,4 +19,4 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git push --force https://Hasanayhanozcan:$HF_TOKEN@huggingface.co/spaces/Hasanayhanozcan/1 main
+          git push --force https://Hasanayhanozcan:$HF_TOKEN@huggingface.co/spaces/Hasanayhanozcan/1 ana
