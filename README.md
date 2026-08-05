@@ -12,6 +12,13 @@
 ## 1. EXECUTIVE SUMMARY & SOVEREIGNTY DECLARATION
 The traditional silicon-based computing and TCP/IP networking paradigms have reached a terminal bottleneck. The exponential energy demands of Large Language Models (LLMs), the latency limitations of classical routing, and the imminent threat of quantum decryption require a fundamental paradigm shift. 
 
+
+ ```bash
+git clone [https://github.com/hasanayhanozcan9/NEW-PROJES.git](https://github.com/hasanayhanozcan9/NEW-PROJES.git)
+cd NEW-PROJES
+run_demo.py
+```
+
 **Biokernel** is a revolutionary 105-module cryptographic architecture that merges in-vivo biological computing principles with sovereign digital infrastructure. It is designed to be the ultimate operating system for the Internet of Bio-Nano Things (IoBNT) and the post-internet era. 
 
 **The Mutualistic Ultimatum:** 
