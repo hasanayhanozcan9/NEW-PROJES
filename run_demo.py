@@ -2,6 +2,7 @@ import os
 import time
 import streamlit as st
 
+# Sayfa yapılandırması
 st.set_page_config(
     page_title="BIOKERNEL: THE SOVEREIGN BIO-DIGITAL ECOSYSTEM & IP REGISTRY",
     layout="wide",
@@ -19,49 +20,46 @@ core_modules = {
 }
 
 if st.button("🚀 Run Biokernel Boot Sequence", type="primary"):
-  output_placeholder = st.empty()
-  log_text = ""
+    output_placeholder = st.empty()
+    log_text = ""
 
-  # Başlık simülasyonu
-  log_text += "====================================================\n"
-  log_text += "      BIOKERNEL SOVEREIGN OS - v1.0.0 BOOT SEQUENCE \n"
-  log_text += "      AUTHOR: HASAN AYHAN ÖZCAN                        \n"
-  log_text += "====================================================\n\n"
-  output_placeholder.code(log_text, language="text")
-  time.sleep(1)
-
-  # Modül kontrolü
-  log_text += "[+] Initializing Core Bio-Digital Engines...\n"
-  output_placeholder.code(log_text, language="text")
-
-  for filename, desc in core_modules.items():
-    if os.path.exists(filename):
-      log_text += f"  --> [{filename}] {desc} ... ONLINE\n"
-    else:
-      log_text += f"  --> [{filename}] {desc} ... STANDBY\n"
+    # Başlık simülasyonu
+    log_text += "====================================================\n"
+    log_text += "      BIOKERNEL SOVEREIGN OS - v1.0.0 BOOT SEQUENCE \n"
+    log_text += "      AUTHOR: HASAN AYHAN ÖZCAN                     \n"
+    log_text += "====================================================\n\n"
     output_placeholder.code(log_text, language="text")
-    time.sleep(0.4)
+    time.sleep(1)
 
-  # Kısıtlama ve uyarılar
-  log_text += "\n[!] SYSTEM HALT: Modules P1 through P105 are RESTRICTED.\n"
-  log_text += (
-      "[!] Commercial IP Vault is locked by cryptographically sealed hash.\n"
-  )
-  output_placeholder.code(log_text, language="text")
-  time.sleep(1)
+    # Modül kontrolü
+    log_text += "[+] Initializing Core Bio-Digital Engines...\n"
+    output_placeholder.code(log_text, language="text")
 
-  log_text += (
-      "\n[X] ACCESS DENIED to Phase 2-13 Modules. Symbiotic License required.\n"
-  )
-  log_text += "[i] Please contact hasanayhanozcan9@gmail.com for enterprise integration.\n"
-  output_placeholder.code(log_text, language="text")
-  time.sleep(1)
+    for filename, desc in core_modules.items():
+        if os.path.exists(filename):
+            log_text += f"  --> [{filename}] {desc} ... ONLINE\n"
+        else:
+            log_text += f"  --> [{filename}] {desc} ... STANDBY\n"
+        
+        output_placeholder.code(log_text, language="text")
+        time.sleep(0.4)
 
-  log_text += "\n[+] System entering autonomous idle state. Biokernel Active: Monitoring local biological mesh network...\n"
-  output_placeholder.code(log_text, language="text")
+    # Kısıtlama ve uyarılar
+    log_text += "\n[!] SYSTEM HALT: Modules P1 through P105 are RESTRICTED.\n"
+    log_text += "[!] Commercial IP Vault is locked by cryptographically sealed hash.\n"
+    output_placeholder.code(log_text, language="text")
+    time.sleep(1)
+
+    log_text += "\n[X] ACCESS DENIED to Phase 2-13 Modules. Symbiotic License required.\n"
+    log_text += "[i] Please contact hasanayhanozcan9@gmail.com for enterprise integration.\n"
+    output_placeholder.code(log_text, language="text")
+    time.sleep(1)
+
+    log_text += "\n[+] System entering autonomous idle state. Biokernel Active: Monitoring local biological mesh network...\n"
+    output_placeholder.code(log_text, language="text")
 
 else:
-  st.info(
-      "Click the button above to launch the sovereign system boot sequence"
-      " live in the browser."
-  )
+    st.info(
+        "Click the button above to launch the sovereign system boot sequence "
+        "live in the browser."
+    )
