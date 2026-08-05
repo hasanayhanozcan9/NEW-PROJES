@@ -20,7 +20,8 @@ git clone [https://github.com/hasanayhanozcan9/NEW-PROJES.git](https://github.co
   cd NEW-PROJES
   python3 run_demo.py
 22  ``` 
-23  **Biokernel** is a revolutionary 105-module cryptographic architecture...
+
+**Biokernel** is a revolutionary 105-module cryptographic architecture...
 
 
 
