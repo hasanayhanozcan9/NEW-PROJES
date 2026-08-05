@@ -8,6 +8,10 @@
 **Timestamp:** Fri Jul 31 12:31:48 UTC 2026
 
 
+### 🚀 LIVE Demo
+
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/Hasanayhanozcan/1)
+
 ---
 
 ## 1. EXECUTIVE SUMMARY & SOVEREIGNTY DECLARATION
