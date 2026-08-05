@@ -1,58 +1,99 @@
+import gradio as gr
 import time
-import sys
 import os
 
-G = '\033[92m'
-Y = '\033[93m'
-R = '\033[91m'
-C = '\033[96m'
-W = '\033[0m'
+def run_demo():
+    # Siyah terminal kutusunu oluşturan HTML yapısı
+    def format_html(text):
+        return f"""
+        <div style="background-color: #0c0c0c; color: #cccccc; padding: 20px; 
+                    font-family: 'Courier New', monospace; font-size: 16px; 
+                    border-radius: 8px; border: 1px solid #333; min-height: 400px; 
+                    white-space: pre-wrap;">{text}</div>
+        """
+    
+    log = ""
+    yield format_html(log)
+    
+    # Renkli metin ekleme fonksiyonu
+    def add_text(new_text, color="white"):
+        nonlocal log
+        color_map = {
+            "green": "#00FF00", 
+            "yellow": "#FFFF00", 
+            "red": "#FF0000", 
+            "cyan": "#00FFFF", 
+            "white": "#FFFFFF"
+        }
+        log += f'<span style="color: {color_map.get(color, "white")}">{new_text}</span>'
+        return format_html(log)
 
-def print_delay(text, delay=0.02):
-    for char in text:
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(delay)
-    print()
+    # 1. Başlık Kısmı
+    yield add_text("\n====================================================\n", "cyan")
+    yield add_text("      BIOKERNEL SOVEREIGN OS - v1.0.0 BOOT SEQUENCE \n", "cyan")
+    yield add_text("      AUTHOR: HASAN AYHAN ÖZCAN                     \n", "cyan")
+    yield add_text("====================================================\n\n", "cyan")
+    time.sleep(1)
 
-print(f"\n{C}===================================================={W}")
-print(f"{C}      BIOKERNEL SOVEREIGN OS - v1.0.0 BOOT SEQUENCE {W}")
-print(f"{C}      AUTHOR: HASAN AYHAN ÖZCAN                     {W}")
-print(f"{C}===================================================={W}\n")
-time.sleep(1)
-
-core_modules = {
-    "sovereign_orchestrator.py": "Sovereign AI Master Orchestrator",
-    "lnn_bio_simulation.py": "Liquid Neural Networks (LNN) Fluidic Engine",
-    "snn_biosensor.py": "Neuromorphic Computing & SNN Transducers",
-    "ais_memory_engine.py": "Agentic AI Swarm Protocols & Immune Memory"
-}
-
-print_delay(f"{G}[+] Initializing Core Bio-Digital Engines...{W}")
-for filename, desc in core_modules.items():
-    if os.path.exists(filename):
-        print_delay(f"  --> [{filename}] {desc} ... {G}ONLINE{W}", 0.01)
-    else:
-        print_delay(f"  --> [{filename}] {desc} ... {Y}STANDBY{W}", 0.01)
-    time.sleep(0.4)
-
-print_delay(f"\n{Y}[!] SYSTEM HALT: Modules P1 through P105 are RESTRICTED.{W}")
-print_delay(f"{Y}[!] Commercial IP Vault is locked by cryptographically sealed hash.{W}")
-time.sleep(1)
-
-print_delay(f"\n{R}[X] ACCESS DENIED to Phase 2-13 Modules. Symbiotic License required.{W}")
-print_delay(f"{C}[i] Please contact hasanayhanozcan9@gmail.com for enterprise integration.{W}")
-time.sleep(1)
-
-print_delay(f"\n{G}[+] System entering autonomous idle state. Listening for node connections...{W}")
-try:
+    # 2. Modüllerin Yüklenmesi
+    yield add_text("[+] Initializing Core Bio-Digital Engines...\n", "green")
+    
+    core_modules = {
+        "sovereign_orchestrator.py": "Sovereign AI Master Orchestrator",
+        "lnn_bio_simulation.py": "Liquid Neural Networks (LNN) Fluidic Engine",
+        "snn_biosensor.py": "Neuromorphic Computing & SNN Transducers",
+        "ais_memory_engine.py": "Agentic AI Swarm Protocols & Immune Memory"
+    }
+    
+    for filename, desc in core_modules.items():
+        if os.path.exists(filename):
+            yield add_text(f"  --> [{filename}] {desc} ... ", "white")
+            yield add_text("ONLINE\n", "green")
+        else:
+            yield add_text(f"  --> [{filename}] {desc} ... ", "white")
+            yield add_text("STANDBY\n", "yellow")
+        time.sleep(0.4)
+    
+    time.sleep(1)
+    
+    # 3. Güvenlik ve Hata Mesajları
+    yield add_text("\n[!] SYSTEM HALT: Modules P1 through P105 are RESTRICTED.\n", "yellow")
+    yield add_text("[!] Commercial IP Vault is locked by cryptographically sealed hash.\n", "yellow")
+    time.sleep(1)
+    
+    yield add_text("\n[X] ACCESS DENIED to Phase 2-13 Modules. Symbiotic License required.\n", "red")
+    yield add_text("[i] Please contact hasanayhanozcan9@gmail.com for enterprise integration.\n", "cyan")
+    time.sleep(1)
+    
+    yield add_text("\n[+] System entering autonomous idle state. Listening for node connections...\n", "green")
+    
+    # 4. ARAYÜZÜ KİLİTLEMEYEN GERÇEK SONSUZ DÖNGÜ (Mesh Network Taraması)
+    base_log = log
     while True:
-        sys.stdout.write(f"\r{G}Biokernel Active: Monitoring local biological mesh network...{W}")
-        time.sleep(1)
-        sys.stdout.write(f"\r{G}Biokernel Active: Monitoring local biological mesh network.{W}  ")
-        time.sleep(1)
-        sys.stdout.write(f"\r{G}Biokernel Active: Monitoring local biological mesh network..{W} ")
-        time.sleep(1)
-except KeyboardInterrupt:
-    print(f"\n\n{R}[!] System shutdown initiated by Chief Architect.{W}")
-    sys.exit()
+        yield format_html(base_log + '<span style="color: #00FF00">Biokernel Active: Monitoring local biological mesh network...</span>')
+        time.sleep(0.8)
+        yield format_html(base_log + '<span style="color: #00FF00">Biokernel Active: Monitoring local biological mesh network.  </span>')
+        time.sleep(0.8)
+        yield format_html(base_log + '<span style="color: #00FF00">Biokernel Active: Monitoring local biological mesh network.. </span>')
+        time.sleep(0.8)
+
+# --- WEB ARAYÜZÜNÜN TASARIMI ---
+with gr.Blocks(theme=gr.themes.Monochrome()) as demo:
+    gr.Markdown("# 🧬 BIOKERNEL: THE SOVEREIGN BIO-DIGITAL ECOSYSTEM")
+    gr.Markdown("**AUTHOR:** HASAN AYHAN ÖZCAN")
+    gr.Markdown("---")
+    
+    # Başlatma Butonu
+    btn = gr.Button("🚀 INITIATE BOOT SEQUENCE", variant="primary")
+    
+    # Siyah Ekran Kutusu
+    terminal_output = gr.HTML(
+        value='<div style="background-color: #0c0c0c; color: #cccccc; padding: 20px; font-family: \'Courier New\', monospace; font-size: 16px; border-radius: 8px; border: 1px solid #333; min-height: 400px;">System Ready. Waiting for initialization trigger...</div>'
+    )
+    
+    # Butona basılınca run_demo fonksiyonunu çalıştır
+    btn.click(fn=run_demo, inputs=[], outputs=[terminal_output])
+
+# Sunucuyu başlat
+if __name__ == "__main__":
+    demo.launch()
