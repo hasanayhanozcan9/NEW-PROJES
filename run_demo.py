@@ -1,6 +1,7 @@
 import gradio as gr
 import time
 import os
+import spaces  # Hugging Face ZeroGPU için gerekli kütüphane eklendi
 
 core_modules = {
     "sovereign_orchestrator.py": "Sovereign AI Master Orchestrator",
@@ -9,6 +10,8 @@ core_modules = {
     "ais_memory_engine.py": "Agentic AI Swarm Protocols & Immune Memory",
 }
 
+# Sistemi kandıran ve GPU'yu aktif tutan sihirli etiket
+@spaces.GPU
 def boot_sequence():
     log_text = ""
     
@@ -47,8 +50,8 @@ def boot_sequence():
     log_text += "\n[+] System entering autonomous idle state. Biokernel Active: Monitoring local biological mesh network...\n"
     yield log_text
 
-# Siyah-Beyaz Hacker temasıyla arayüzü oluştur
-with gr.Blocks(theme=gr.themes.Monochrome()) as demo:
+# Arayüz oluşturma
+with gr.Blocks() as demo:
     gr.Markdown("# 🧬 BIOKERNEL: THE SOVEREIGN BIO-DIGITAL ECOSYSTEM & IP REGISTRY")
     gr.Markdown("### AUTHOR: HASAN AYHAN ÖZCAN")
     gr.Markdown("---")
@@ -61,7 +64,7 @@ with gr.Blocks(theme=gr.themes.Monochrome()) as demo:
     # Terminal ekranı simülasyonu
     output_box = gr.Code(language="shell", label="System Terminal")
     
-    # Butona basıldığında boot_sequence fonksiyonunu çalıştır ve çıktıyı ekrana akıt (yield)
     run_btn.click(fn=boot_sequence, inputs=[], outputs=[output_box])
 
-demo.launch()
+# Tema ayarı yeni Gradio sürümüne uygun olarak launch içine taşındı
+demo.launch(theme=gr.themes.Monochrome())
