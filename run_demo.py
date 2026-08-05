@@ -67,7 +67,7 @@ def run_demo():
     
     yield add_text("\n[+] System entering autonomous idle state. Listening for node connections...\n", "green")
     
-    # 4. ARAYÜZÜ KİLİTLEMEYEN GERÇEK SONSUZ DÖNGÜ (Mesh Network Taraması)
+    # 4. Arayüzü kilitlemeyen web uyumlu döngü (Mesh Network Taraması)
     base_log = log
     while True:
         yield format_html(base_log + '<span style="color: #00FF00">Biokernel Active: Monitoring local biological mesh network...</span>')
@@ -78,7 +78,8 @@ def run_demo():
         time.sleep(0.8)
 
 # --- WEB ARAYÜZÜNÜN TASARIMI ---
-with gr.Blocks(theme=gr.themes.Monochrome()) as demo:
+# Uyarıyı gidermek için theme parametresini buradan tamamen kaldırdık.
+with gr.Blocks() as demo:
     gr.Markdown("# 🧬 BIOKERNEL: THE SOVEREIGN BIO-DIGITAL ECOSYSTEM")
     gr.Markdown("**AUTHOR:** HASAN AYHAN ÖZCAN")
     gr.Markdown("---")
