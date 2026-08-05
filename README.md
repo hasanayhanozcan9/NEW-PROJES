@@ -16,7 +16,6 @@ The traditional silicon-based computing and TCP/IP networking paradigms have rea
 To instantly initialize the Sovereign OS orchestrator and run the bio-mesh network simulation locally, execute this single automated command in your terminal:
 
 ```bash
-```bash
 git clone [https://github.com/hasanayhanozcan9/NEW-PROJES.git](https://github.com/hasanayhanozcan9/NEW-PROJES.git) && cd NEW-PROJES && python3 run_demo.py
   ``` 
 
